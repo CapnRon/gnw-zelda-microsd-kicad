@@ -76,6 +76,22 @@ same contact. Not a source for this repository's Zelda board -- included
 purely for attribution/provenance and as reference material for anyone
 working on the Mario variant in the future.
 
+## `kicad-libs-primoangelo/`
+
+`Libs.zip`, containing PrimoAngelo's own native KiCad footprint libraries
+and 3D models used to build the designs above: `Impronte/` ("footprints",
+Italian) with `Pad.pretty`/`_FG_Pad.pretty` (the castellated edge-contact
+footprints, including `Pad_0_3x1_2.kicad_mod` -- matching this
+repository's own independently-reconstructed 0.3x1.2mm castellated pad
+geometry exactly, real confirmation the original reverse-engineering in
+`docs/design-notes.md` got the geometry right) and `_FG_MicroSD.pretty`
+(microSD socket/connector footprints), plus `Modelli_3D/` ("3D models")
+with STEP models for the microSD socket and connector. Provided by
+PrimoAngelo in a later contact, for the same attribution/provenance
+reason as the items above -- not used to modify this repository's
+existing (already-verified) footprints, included for completeness and as
+a resource for future work (e.g. 3D visualization, mechanical checks).
+
 ## Licensing note
 
 These files are third-party work, included here under the terms of
