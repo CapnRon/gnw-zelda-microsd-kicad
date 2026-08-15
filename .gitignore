@@ -1,0 +1,21 @@
+# KiCad lock files (recreated every time the project is opened)
+*.lck
+
+# KiCad local editor history (undo/backup snapshots, not source)
+_autosave-*
+.history/
+*-bak
+*-save.pro
+*.bak
+
+# KiCad footprint/symbol cache and project-local settings that shouldn't
+# be shared across machines
+fp-info-cache
+*.kicad_prl
+
+# 3D model cache
+3d_cache/
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
