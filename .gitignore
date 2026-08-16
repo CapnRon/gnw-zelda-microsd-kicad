@@ -7,6 +7,7 @@ _autosave-*
 *-bak
 *-save.pro
 *.bak
+*-backups/
 
 # KiCad footprint/symbol cache and project-local settings that shouldn't
 # be shared across machines

@@ -22,6 +22,26 @@ territory before ordering boards, not electrical faults. See
 `docs/design-notes.md` for the full derivation, findings, and everything
 still worth double-checking by hand in the KiCad GUI before fabrication.
 
+## Commit history
+
+- **Initial commit** -- the original reconstruction: schematic, PCB,
+  footprints, and silkscreen rebuilt from scratch in KiCad from measured
+  Gerber geometry (see Origin and attribution below). No third-party
+  KiCad source files were used at this point -- every footprint was
+  RE'd/approximated by hand from pad positions and sizes read off the
+  Gerbers.
+- **This commit** -- incorporates real assets from PrimoAngelo's native
+  KiCad source (added as source material in the prior commit) now that
+  he's confirmed as the known-good original author: J2 (microSD socket)
+  and J3 (VBAT tab) were swapped from their RE'd/approximated footprints
+  to his real `MSD1A`/`Pad_1x1_5` pad geometry, and a real STEP model was
+  wired into U1 (RT9193 LDO). C1/C2/R1 now carry a second, real
+  hand-solder-0805 footprint stacked at the same location as their
+  original passive footprint, so either package size can be assembled.
+  Also fixed a schematic/PCB reference-designator mismatch (J2/J3 and
+  U1/U2 were swapped between the two files) and a batch of inconsistent
+  net names left over from re-syncing the PCB against the schematic.
+
 ## Repository layout
 
 ```
@@ -40,15 +60,18 @@ NOTICE.md         Licensing rationale and attribution summary
 - **U1** -- RT9193-28GB LDO. VIN <- raw battery (~4.2V) via the J1
   castellated edge; EN <- console GPIO (via J1); VOUT -> 2.8V microSD
   supply.
-- **J2** -- microSD socket (SPI-mode wiring: CS/MOSI/MISO/CLK + VDD/GND).
+- **J2** -- microSD socket (SPI-mode wiring: CS/MOSI/MISO/CLK + VDD/GND),
+  PrimoAngelo's real `MSD1A` footprint.
 - **J1** -- 7-position castellated edge: GND, CS, MISO, CLK, MOSI, NC
   (spare), EN.
-- **J3** -- castellated VBAT solder tab (1.5x1.5mm square pad, same
-  machined-edge technique as J1) -- solders directly to the positive
-  terminal of an external SMD capacitor.
+- **J3** -- castellated VBAT solder tab, PrimoAngelo's real `Pad_1x1_5`
+  footprint (same machined-edge technique as J1) -- solders directly to
+  the positive terminal of an external SMD capacitor.
 - **R1** -- 100k pulldown holding the LDO disabled by default until the
-  console GPIO actively enables it.
-- **C1/C2** -- input/output decoupling for U1.
+  console GPIO actively enables it. Real hand-solder-0805 footprint
+  stacked at the same location as the original RE'd footprint.
+- **C1/C2** -- input/output decoupling for U1. Same dual-footprint
+  stacking as R1 (0805 hand-solder on top of the original).
 - **H1-H4** -- plated, electrically-isolated mounting pads (3.0mm pad /
   1.8mm drill), positioned to match the reference designs' mounting
   pattern.
@@ -97,12 +120,14 @@ Reciprocal). See [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md).
 
 Requires KiCad 10. Open `hardware/GnW-Zelda-MicroSD.kicad_pro`.
 
-Custom parts (castellated connectors, exact-geometry footprints for the
-microSD socket/LDO/passives) are embedded directly in the `.kicad_pcb` --
-no external footprint library is needed. The schematic symbol library
-(`hardware/gnw_zelda_microsd.kicad_sym`) is referenced via a
-project-relative path (`${KIPRJMOD}`), so the project is portable to any
-clone location.
+Most custom parts (castellated connectors, exact-geometry footprints for
+the LDO/passives) are embedded directly in the `.kicad_pcb`. J2 and J3
+now use real footprints from PrimoAngelo's native library, referenced via
+project-scoped libraries in `hardware/fp-lib-table` that point into
+`source-material/` with `${KIPRJMOD}`-relative paths -- so the project
+stays portable to any clone location, but `source-material/` must come
+along with it. The schematic symbol library
+(`hardware/gnw_zelda_microsd.kicad_sym`) is referenced the same way.
 
 ## Before ordering boards
 

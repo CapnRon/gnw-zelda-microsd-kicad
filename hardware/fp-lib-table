@@ -1,0 +1,9 @@
+(fp_lib_table
+  (version 7)
+
+  (lib (name "PrimoAngelo_Pad") (type "KiCad") (uri "${KIPRJMOD}/../source-material/kicad-libs-primoangelo/extracted/Libs/KiCad/Impronte/Pad.pretty") (options "") (descr ""))
+
+  (lib (name "PrimoAngelo_FG_MicroSD") (type "KiCad") (uri "${KIPRJMOD}/../source-material/kicad-libs-primoangelo/extracted/Libs/KiCad/Impronte/_FG_MicroSD.pretty") (options "") (descr ""))
+
+  (lib (name "PrimoAngelo_FG_Pad") (type "KiCad") (uri "${KIPRJMOD}/../source-material/kicad-libs-primoangelo/extracted/Libs/KiCad/Impronte/_FG_Pad.pretty") (options "") (descr ""))
+)
