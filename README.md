@@ -12,6 +12,11 @@ mating surface, not an approximation) and carries an onboard RT9193-28GB
 LDO regulating the console's raw ~4.2V battery rail down to a safe 2.8V
 for the microSD card.
 
+**This is a flex PCB**, not rigid: 2-layer, 1oz copper both sides on a
+2mil (50.8um) polyimide core, 0.1408mm total board thickness.
+
+![Populated board, 3D render](docs/renders/board_3d.png)
+
 ## Status
 
 Working draft, not yet fab-verified on real hardware. Electrically clean
@@ -47,7 +52,7 @@ still worth double-checking by hand in the KiCad GUI before fabrication.
 ```
 hardware/         KiCad project (open GnW-Zelda-MicroSD.kicad_pro here)
 production/       Gerbers + drill files (RS-274X, Excellon) + a zipped bundle
-docs/             Design notes, top/bottom copper renders
+docs/             Design notes, top/bottom copper + 3D renders
 source-material/  Original third-party source files this design descends
                    from, preserved for attribution/licence compliance --
                    see source-material/README.md

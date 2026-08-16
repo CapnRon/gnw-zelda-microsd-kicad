@@ -3,7 +3,7 @@
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(general
-		(thickness 1.6)
+		(thickness 0.1408)
 		(legacy_teardrops no)
 	)
 	(paper "User" 300 100)
@@ -37,6 +37,49 @@
 		(33 "B.Fab" user)
 	)
 	(setup
+		(stackup
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(color "Yellow")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 1"
+				(type "core")
+				(color "Polyimide")
+				(thickness 0.0508 locked)
+				(material "Polyimide")
+				(epsilon_r 3.2)
+				(loss_tangent 0.004)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(color "Yellow")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+				(color "White")
+			)
+			(copper_finish "None")
+			(dielectric_constraints no)
+		)
 		(pad_to_mask_clearance 0.05)
 		(allow_soldermask_bridges_in_footprints no)
 		(tenting
@@ -53,6 +96,7 @@
 		)
 		(capping no)
 		(filling no)
+		(zone_defaults)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -1167,7 +1211,7 @@
 			(uuid "c5192879-44b9-49e5-8f8a-f05a3cc10197")
 		)
 		(embedded_fonts no)
-		(model "/mnt/d/gnw-zelda-microsd/source-material/kicad-libs-primoangelo/extracted/Libs/KiCad/Modelli_3D/MSD-1-A.step"
+		(model "${KIPRJMOD}/../source-material/kicad-libs-primoangelo/extracted/Libs/KiCad/Modelli_3D/MSD-1-A.step"
 			(offset
 				(xyz -7.5 -8 0)
 			)
