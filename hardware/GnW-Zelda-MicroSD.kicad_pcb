@@ -348,14 +348,14 @@
 		(uuid "3200d65b-5e61-475a-b82f-5f54a3bb2d50")
 		(at 0 0)
 		(descr "RT9193-28GB LDO -- exact pad positions/sizes (aperture D20, 1.025x0.3mm) replicated from source")
-		(property "Reference" "U1"
-			(at 157.9 57 0)
+		(property "Reference" "RT9193-28GB"
+			(at 154.75 58.9 0)
 			(layer "F.SilkS")
 			(uuid "d612487a-f694-416c-ab96-0d37e05ce10b")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.5 0.5)
+					(thickness 0.125)
 				)
 			)
 		)
@@ -486,7 +486,7 @@
 		)
 		(property "Value" "100k"
 			(at 0.1 -1.65 90)
-			(layer "F.Fab")
+			(layer "F.SilkS")
 			(uuid "7d0ac30e-89ae-40bd-b3ec-f05014c883e9")
 			(effects
 				(font
@@ -1334,7 +1334,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C2"
-			(at 1.35 1.85 0)
+			(at 0 1.7 0)
 			(layer "F.SilkS")
 			(uuid "348631c0-518b-4036-b4b8-a66127bf919c")
 			(effects
@@ -1346,7 +1346,7 @@
 		)
 		(property "Value" "1uF"
 			(at -3.1 0.3 0)
-			(layer "F.Fab")
+			(layer "F.SilkS")
 			(uuid "dd7cee32-1798-46d1-a8c0-0c7a22608754")
 			(effects
 				(font
@@ -1727,7 +1727,7 @@
 		)
 		(property "Value" "1uF"
 			(at -3.6 -0.1 0)
-			(layer "F.Fab")
+			(layer "F.SilkS")
 			(uuid "db355cc5-09af-4bd2-b031-bda77f5c0c7a")
 			(effects
 				(font
@@ -3038,6 +3038,18 @@
 		)
 		(layer "Edge.Cuts")
 		(uuid "109b216e-bf57-48f4-b2e2-d8d5cc85faf1")
+	)
+	(gr_text "4V"
+		(at 138.2 50.7 0)
+		(layer "F.SilkS")
+		(uuid "275d5c92-1d94-424b-b21e-a31505cb0724")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
 	)
 	(via
 		(at 149.715 41.87)
